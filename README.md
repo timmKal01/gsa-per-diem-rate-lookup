@@ -68,4 +68,4 @@ same data behind GSA's own per diem lookup tool. No scraping, no proxy.
 
 ## Related products
 
-- [Federal Contract Win Finder](https://github.com/timmKal01/federal-contract-award-tracker) — for GovCon teams tracking federal contract awards rather than travel billing rates
+- [Federal Contract Win Finder](https://github.com/timmKal01/federal-contract-award-tracker): for GovCon teams tracking federal contract awards rather than travel billing rates
