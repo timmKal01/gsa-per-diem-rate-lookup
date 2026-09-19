@@ -1,0 +1,15 @@
+{
+    "name": "gsa-per-diem-rate-lookup",
+    "version": "0.1.0",
+    "type": "module",
+    "description": "Look up official U.S. government per diem rates for any city, state, or zip code and year via the GSA Travel Per Diem API.",
+    "engines": {
+        "node": ">=18.0.0"
+    },
+    "dependencies": {
+        "apify": "^3.2.6"
+    },
+    "scripts": {
+        "start": "node src/main.js"
+    }
+}

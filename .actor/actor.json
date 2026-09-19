@@ -1,0 +1,13 @@
+{
+    "actorSpecification": 1,
+    "name": "gsa-per-diem-rate-lookup",
+    "title": "GSA Per Diem Rate Lookup: Official Lodging and Meal Rates",
+    "description": "Look up official U.S. government per diem rates (lodging by month, plus M&IE meal rate) for any city, state, or zip code and year. For corporate travel and expense compliance, and government contractors billing at GSA rates. No signup required.",
+    "version": "0.1",
+    "meta": {
+        "templateId": "custom-no-proxy"
+    },
+    "input": "./input_schema.json",
+    "output": "./output_schema.json",
+    "dockerfile": "../Dockerfile"
+}

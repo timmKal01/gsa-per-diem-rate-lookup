@@ -1,0 +1,12 @@
+{
+    "actorOutputSchemaVersion": 1,
+    "title": "Output schema of GSA Per Diem Rate Lookup",
+    "description": "One record per location: monthly lodging rates and the M&IE meal rate for the requested fiscal year.",
+    "properties": {
+        "results": {
+            "type": "string",
+            "title": "Results",
+            "template": "{{links.apiDefaultDatasetUrl}}/items"
+        }
+    }
+}

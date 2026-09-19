@@ -1,0 +1,33 @@
+{
+    "title": "GSA Per Diem Rate Lookup Input",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+        "locations": {
+            "title": "Locations",
+            "type": "array",
+            "editor": "json",
+            "description": "List of locations to look up: [{ \"city\": \"Austin\", \"state\": \"TX\" }] or [{ \"zip\": \"78701\" }]. Cities not on GSA's specific list return the standard CONUS rate automatically.",
+            "prefill": [
+                { "city": "Austin", "state": "TX" }
+            ]
+        },
+        "year": {
+            "title": "Fiscal year",
+            "type": "integer",
+            "editor": "number",
+            "description": "Federal fiscal year to look up rates for.",
+            "default": 2026,
+            "minimum": 2018,
+            "maximum": 2030
+        },
+        "apiKey": {
+            "title": "GSA API key (optional)",
+            "type": "string",
+            "editor": "textfield",
+            "isSecret": true,
+            "description": "Optional free API key from api.gsa.gov. Falls back to the public DEMO_KEY, which works but may be rate-limited under heavy use. Get your own free key at https://open.gsa.gov/api/perdiem/ for larger batches."
+        }
+    },
+    "required": ["locations"]
+}
