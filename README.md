@@ -66,6 +66,12 @@ can tell the two cases apart in bulk lookups.
 Direct calls to the official GSA Travel Per Diem API (`api.gsa.gov`), the
 same data behind GSA's own per diem lookup tool. No scraping, no proxy.
 
+## Pricing note
+
+Billed per **location checked**, not per monthly rate row returned — one
+charge per location whether it resolves to a specifically-priced city
+with 12 monthly lodging rates or the flat standard CONUS rate.
+
 ## Related products
 
 - [Federal Contract Win Finder](https://github.com/timmKal01/federal-contract-award-tracker): for GovCon teams tracking federal contract awards rather than travel billing rates
