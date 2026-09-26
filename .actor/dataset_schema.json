@@ -1,0 +1,53 @@
+{
+    "actorSpecification": 1,
+    "fields": {},
+    "views": {
+        "overview": {
+            "title": "Overview",
+            "transformation": {
+                "fields": [
+                    "city",
+                    "county",
+                    "state",
+                    "year",
+                    "isStandardRate",
+                    "mealsRate",
+                    "monthlyLodgingRates"
+                ]
+            },
+            "display": {
+                "component": "table",
+                "properties": {
+                    "city": {
+                        "label": "City",
+                        "format": "text"
+                    },
+                    "county": {
+                        "label": "County",
+                        "format": "text"
+                    },
+                    "state": {
+                        "label": "State",
+                        "format": "text"
+                    },
+                    "year": {
+                        "label": "Year",
+                        "format": "number"
+                    },
+                    "isStandardRate": {
+                        "label": "Is standard rate",
+                        "format": "boolean"
+                    },
+                    "mealsRate": {
+                        "label": "Meals rate",
+                        "format": "number"
+                    },
+                    "monthlyLodgingRates": {
+                        "label": "Monthly lodging rates",
+                        "format": "array"
+                    }
+                }
+            }
+        }
+    }
+}
