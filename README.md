@@ -83,4 +83,4 @@ with 12 monthly lodging rates or the flat standard CONUS rate.
 
 ## Related products
 
-- [Federal Contract Win Finder](https://github.com/timmKal01/federal-contract-award-tracker): for GovCon teams tracking federal contract awards rather than travel billing rates
+- [Federal Contract Awards](https://apify.com/m_ctim/federal-contract-award-tracker): for GovCon teams tracking federal contract awards rather than travel billing rates
