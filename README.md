@@ -1,8 +1,17 @@
-# GSA Per Diem Rate Lookup: Official Lodging and Meal Rates
+# GSA Per Diem Rates: Lodging & Meals by City
 
-Give it a city and state, or a zip code, and a fiscal year. Get back the
-official U.S. government per diem rate for that location: lodging rate by
-month, plus the flat M&IE (meals and incidental expenses) rate.
+Official U.S. government travel per diem rates for corporate travel,
+expense and government contracting teams. Enter a city and state or a zip
+code and a fiscal year, and get the GSA lodging rate for each month plus
+the daily meals and incidental expenses (M&IE) rate.
+
+## What you get
+
+One row per location:
+
+- The lodging rate for each month of the fiscal year
+- The daily meals and incidental expenses (M&IE) rate
+- City, county, state and zip, and whether the standard rate applies
 
 ## Who this is for
 
