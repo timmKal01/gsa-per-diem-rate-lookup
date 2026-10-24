@@ -1,3 +1,7 @@
+// Some public APIs refuse requests that identify themselves only as Node's default "node" user agent (data.cms.gov
+// started doing so in October 2026), so every request says which tool is asking and where to find it.
+const USER_AGENT = 'gsa-per-diem-rate-lookup/0.1 (+https://apify.com/m_ctim/gsa-per-diem-rate-lookup)';
+
 const BASE_URL = 'https://api.gsa.gov/travel/perdiem/v2/rates';
 const REQUEST_TIMEOUT_MS = 15_000;
 const MAX_ATTEMPTS = 3;
@@ -13,7 +17,7 @@ async function fetchWithRetry(url) {
         const controller = new AbortController();
         const timer = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
         try {
-            const res = await fetch(url, { signal: controller.signal });
+            const res = await fetch(url, { headers: { 'User-Agent': USER_AGENT }, signal: controller.signal });
             const body = await res.json().catch(() => null);
             if (res.ok && body) return body;
             const retryable = res.status === 429 || res.status >= 500 || body === null;
