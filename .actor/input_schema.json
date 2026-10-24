@@ -10,7 +10,8 @@
             "description": "List of locations to look up: [{ \"city\": \"Austin\", \"state\": \"TX\" }] or [{ \"zip\": \"78701\" }]. Cities not on GSA's specific list return the standard CONUS rate automatically.",
             "prefill": [
                 { "city": "Austin", "state": "TX" }
-            ]
+            ],
+            "default": [{"city":"Austin","state":"TX"}]
         },
         "year": {
             "title": "Fiscal year",
@@ -29,5 +30,5 @@
             "description": "Optional free API key from api.gsa.gov. Falls back to the public DEMO_KEY, which works but may be rate-limited under heavy use. Get your own free key at https://open.gsa.gov/api/perdiem/ for larger batches."
         }
     },
-    "required": ["locations"]
+    "required": []
 }

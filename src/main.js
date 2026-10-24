@@ -4,14 +4,18 @@ import { lookupPerDiem } from './gsa.js';
 await Actor.init();
 
 const input = (await Actor.getInput()) ?? {};
-const { locations = [], year = 2026, apiKey } = input;
+const { locations: locationsInput, year = 2026, apiKey } = input;
 
 /** Must match the event name configured in this Actor's pay-per-event pricing on Apify. */
 const LOCATION_CHECKED_EVENT = 'location-checked';
 
-if (!Array.isArray(locations) || locations.length === 0) {
-    throw new Error('Input "locations" must be a non-empty array, e.g. [{ "city": "Austin", "state": "TX" }].');
+if (locationsInput !== undefined && locationsInput !== null && !Array.isArray(locationsInput)) {
+    throw new Error('Input "locations" must be an array, e.g. [{ "city": "Austin", "state": "TX" }].');
 }
+// An empty call (an AI agent calling with {}, or an empty API call) looks up the input form's example instead of failing.
+const EXAMPLE_LOCATIONS = [{ city: 'Austin', state: 'TX' }];
+const locations = locationsInput?.length ? locationsInput : EXAMPLE_LOCATIONS;
+if (locations === EXAMPLE_LOCATIONS) log.info('No locations given, so looking up the example: Austin, TX.');
 
 for (const location of locations) {
     log.info('Looking up per diem rate', { location, year });
