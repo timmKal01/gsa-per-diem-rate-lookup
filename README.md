@@ -50,6 +50,7 @@ One record per location per rate period found:
 
 ```json
 {
+  "rowType": "rate",
   "location": { "city": "Austin", "state": "TX" },
   "city": "Austin",
   "county": "Travis",
@@ -65,6 +66,8 @@ One record per location per rate period found:
   ]
 }
 ```
+
+`rowType` is `"rate"`, or `"error"` for a location that couldn't be looked up. A location GSA has no rate for comes back as a `"rate"` row with `found: false`.
 
 `isStandardRate` is `true` when the location isn't on GSA's list of
 specifically-priced cities and got the standard CONUS rate instead, so you

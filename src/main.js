@@ -25,18 +25,18 @@ for (const location of locations) {
         outcome = await lookupPerDiem({ location, year, apiKey });
     } catch (err) {
         log.warning('Per diem lookup failed', { location, error: err.message });
-        await Actor.pushData({ location, year, found: false, error: err.message });
+        await Actor.pushData({ rowType: 'error', location, year, found: false, error: err.message });
         continue;
     }
 
     if (!outcome.found) {
-        await Actor.pushData({ location, year, found: false, error: outcome.error ?? null });
+        await Actor.pushData({ rowType: outcome.error ? 'error' : 'rate', location, year, found: false, error: outcome.error ?? null });
         await Actor.charge({ eventName: LOCATION_CHECKED_EVENT });
         continue;
     }
 
     for (const rate of outcome.rates) {
-        await Actor.pushData({ location, ...rate });
+        await Actor.pushData({ rowType: 'rate', location, ...rate });
     }
     await Actor.charge({ eventName: LOCATION_CHECKED_EVENT });
 }
